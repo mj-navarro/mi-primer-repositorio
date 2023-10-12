@@ -1,0 +1,108 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container .image {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translateX(-50%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.container .image#img-1 {
+  background-image: url(assets/miles.jpg);
+}
+.container .image#img-2 {
+  background-image: url(assets/young-miko.jpg);
+}
+.container .image#img-3 {
+  background-image: url(assets/spongebob-sad.gif);
+}
+.container .image#img-4 {
+  background-image: url(assets/peruano.jpg);
+}
+.container .radio-container .radio {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.5s ease;
+}
+.container .radio-container .radio:not(.radio:checked) {
+  transform: scale(0.7);
+}
+.container:has(#rd-1:checked) #img-1 {
+  opacity: 1;
+}
+.container:has(#rd-2:checked) #img-2 {
+  opacity: 1;
+}
+.container:has(#rd-3:checked) #img-3 {
+  opacity: 1;
+}
+.container:has(#rd-4:checked) #img-4 {
+  opacity: 1;
+}
+.clip-test {
+  display: flex;
+  aspect-ratio: 1 / 1;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.42s ease;
+}
+.clip-test:has(.clip-button:hover) {
+  transform: scale(1.16);
+}
+.clip-test:has(.clip-button:hover) .clip-button {
+  clip-path: circle(100% at 50% 50%);
+}
+.clip-test:has(.clip-button:hover) .clip-button .clip-content {
+  opacity: 1;
+}
+.clip-test .clip-button {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/young-miko.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: circle(30% at 50% 50%);
+  transition: clip-path 0.42s ease;
+}
+.clip-test .clip-button .clip-content {
+  display: inline-block;
+  opacity: 0;
+  background: linear-gradient(0deg, #000, #000, #0000);
+  width: 100%;
+  padding: 1rem;
+  transition: opacity 0.54s ease;
+}
+.clip-test .clip-button .clip-content .clip-text {
+  color: #a8f2ff;
+}
+.clip-test .clip-button .clip-content .clip-title {
+  display: block;
+  font-size: 1.25em;
+  line-height: 2;
+  letter-spacing: 1.4px;
+}
+.clip-test .clip-button .clip-content .clip-subtitle {
+  color: #ffffffda;
+}
